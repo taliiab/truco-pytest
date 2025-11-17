@@ -24,8 +24,6 @@ Adversário (outro jogador humano ou computador.
 
 ## Casos de Uso
 
-------------------------------------------------------------------------
-
 ### **UC01 -- Iniciar Jogo**
 
 **Ator Principal:** Jogador 1\
@@ -36,8 +34,6 @@ sistema embaralha o baralho e distribui 3 cartas para cada jogador. - O
 sistema define aleatoriamente quem inicia. - O jogo começa.
 
 **Regras de Negócio:** RN01, RN02, RN03
-
-------------------------------------------------------------------------
 
 ### **UC02 -- Jogar Carta**
 
@@ -51,8 +47,6 @@ registrado.
 
 **Regras de Negócio:** RN04, RN05, RN06
 
-------------------------------------------------------------------------
-
 ### **UC03 -- Pedir Truco / Retruco / Vale Quatro**
 
 **Ator Principal:** Jogador\
@@ -65,7 +59,6 @@ o valor da mão. - **Recusou:** quem pediu ganha os pontos. -
 
 **Regras de Negócio:** RN07, RN08, RN09, RN10
 
-------------------------------------------------------------------------
 
 ### **UC04 -- Contar Pontos**
 
@@ -78,8 +71,6 @@ vencedor.
 
 **Regras de Negócio:** RN11, RN12
 
-------------------------------------------------------------------------
-
 ### **UC05 -- Envido e Flor**
 
 **Ator Principal:** Jogador\
@@ -91,7 +82,6 @@ vencedor recebe a pontuação correspondente.
 
 **Regras de Negócio:** RN13, RN14, RN15
 
-------------------------------------------------------------------------
 
 ### **UC06 -- Finalizar Partida**
 
@@ -103,42 +93,41 @@ pontos. - Exibe o vencedor. - Oferece reiniciar ou sair.
 
 **Regras de Negócio:** RN12
 
-------------------------------------------------------------------------
 
 ## Regras de Negócio (RN)
 
-### **RN01** -- Baralho com 40 cartas (sem 8 e 9).
+#### **RN01** -- Baralho com 40 cartas (sem 8 e 9).
 
-### **RN02** -- Hierarquia das cartas:
+#### **RN02** -- Hierarquia das cartas:
 
 1 \> 7 (ouro, espada) \> 3 \> 2 \> 12 \> 11 \> 10 \> 7 (pau, copa) \> 6
 \> 5 \> 4
 
-### **RN03** -- Cada jogador recebe 3 cartas.
+#### **RN03** -- Cada jogador recebe 3 cartas.
 
-### **RN04** -- Carta maior vence a rodada.
+#### **RN04** -- Carta maior vence a rodada.
 
-### **RN05** -- Quem vence 2 rodadas ganha a mão.
+#### **RN05** -- Quem vence 2 rodadas ganha a mão.
 
-### **RN06** -- Empate: vence quem for "mão".
+#### **RN06** -- Empate: vence quem for "mão".
 
-### **RN07** -- Truco vale 2 pontos; retruco 3; vale quatro 4.
+#### **RN07** -- Truco vale 2 pontos; retruco 3; vale quatro 4.
 
-### **RN08** -- Recusar dá pontos do nível anterior ao adversário.
+#### **RN08** -- Recusar dá pontos do nível anterior ao adversário.
 
-### **RN09** -- Só pode pedir retruco se tiver aceitado truco antes.
+#### **RN09** -- Só pode pedir retruco se tiver aceitado truco antes.
 
-### **RN10** -- Não pode pedir truco novamente após recusar.
+#### **RN10** -- Não pode pedir truco novamente após recusar.
 
-### **RN11** -- Pontuação máxima: 15 ou 30.
+#### **RN11** -- Pontuação máxima: 15 ou 30.
 
-### **RN12** -- Ao atingir 15 ou 30, o jogo termina automaticamente.
+#### **RN12** -- Ao atingir 15 ou 30, o jogo termina automaticamente.
 
-### **RN13** -- Envido é jogado antes da primeira rodada.
+#### **RN13** -- Envido é jogado antes da primeira rodada.
 
-### **RN14** -- Flor só pode ser anunciada com 3 cartas do mesmo naipe.
+#### **RN14** -- Flor só pode ser anunciada com 3 cartas do mesmo naipe.
 
-### **RN15** -- Pontuação do Envido / Flor:
+#### **RN15** -- Pontuação do Envido / Flor:
 
 -   Soma das cartas do mesmo naipe + 10 pontos por carta.
 -   Número da carta também soma (ex: 1 = 10 + 1, 2 = 10 + 2).
