@@ -133,3 +133,76 @@ pontos. - Exibe o vencedor. - Oferece reiniciar ou sair.
 -   Número da carta também soma (ex: 1 = 10 + 1, 2 = 10 + 2).
 -   Cartas 10, 11, 12 somam apenas +10.
 
+# Cenário de erro 
+```bash
+--- Rodada 1 ---
+
+Sua mão
+
+[0] 11 de ESPADAS
+[1] 3 de BASTOS
+[2] 2 de BASTOS
+Registro: {'cartaAltaRobo': 24, 'cartaMediaRobo': 16, 'cartaBaixaRobo': 2, 'ganhadorPrimeiraRodada': 2, 'ganhadorSegundaRodada': 2, 'ganhadorTerceiraRodada': 2, 'pontosEnvidoRobo': 5}
+Bot chamou truco!
+Você aceita? (s/n/aumentar): s
+Registro: {'cartaAltaRobo': 24, 'cartaMediaRobo': 16, 'cartaBaixaRobo': 2, 'ganhadorPrimeiraRodada': 2, 'ganhadorSegundaRodada': 2, 'ganhadorTerceiraRodada': 2, 'pontosEnvidoRobo': 5, 'quemTruco': 2, 'quandoTruco': 1}
+Bot jogou:
+[X] 2 de OUROS
+
+Sua mão:
+
+[0] 11 de ESPADAS
+[1] 3 de BASTOS
+[2] 2 de BASTOS
+
+
+[0-2] Jogar carta  [4] Truco  [5] Retruco  [6] Vale quatro  [7] Envido  [8] Real envido  [9] Falta envido [10] Flor
+
+Escolha sua opção: 1
+Talia jogou:
+[X] 3 de BASTOS
+Talia ganhou a rodada
+[1, 0, 0]
+
+--- Rodada 2 ---
+
+Sua mão:
+
+[0] 11 de ESPADAS
+[1] 2 de BASTOS
+
+
+[0-2] Jogar carta  [4] Truco  [5] Retruco  [6] Vale quatro  [7] Envido  [8] Real envido  [9] Falta envido [10] Flor
+
+Escolha sua opção: 1
+Talia jogou:
+[X] 2 de BASTOS
+Registro: {'cartaAltaRobo': 24, 'cartaMediaRobo': 16, 'cartaBaixaRobo': 2, 'primeiraCartaRobo': 16, 'primeiraCartaHumano': 24, 'segundaCartaHumano': 16, 'ganhadorPrimeiraRodada': 1, 'ganhadorSegundaRodada': 2, 'ganhadorTerceiraRodada': 2, 'pontosEnvidoRobo': 5, 'quemTruco': 2, 'quandoTruco': 1}
+Bot jogou:
+[X] 3 de COPAS
+Bot ganhou a rodada
+[1, 2, 0]
+
+--- Rodada 3 ---
+
+Sua mão
+
+[0] 11 de ESPADAS
+Registro: {'cartaAltaRobo': 24, 'cartaMediaRobo': 16, 'cartaBaixaRobo': 2, 'primeiraCartaRobo': 16, 'primeiraCartaHumano': 24, 'segundaCartaRobo': 24, 'segundaCartaHumano': 16, 'ganhadorPrimeiraRodada': 1, 'ganhadorSegundaRodada': 2, 'ganhadorTerceiraRodada': 2, 'pontosEnvidoRobo': 5, 'quemTruco': 2, 'quandoTruco': 1}
+Traceback (most recent call last):
+  File "c:\Users\Lenovo\Downloads\TrucoCBR - pytest\Jogo\updated_main.py", line 557, in <module>
+    main()
+    ~~~~^^
+  File "c:\Users\Lenovo\Downloads\TrucoCBR - pytest\Jogo\updated_main.py", line 554, in main
+    processar_rodada(jogo, jogador1, jogador2, 3)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Lenovo\Downloads\TrucoCBR - pytest\Jogo\updated_main.py", line 506, in processar_rodada
+    carta = realizar_jogada(jogador, adversario, jogo, rodada, is_bot)
+  File "c:\Users\Lenovo\Downloads\TrucoCBR - pytest\Jogo\updated_main.py", line 327, in realizar_jogada
+    jogada_bot = jogador.avaliarJogada(rodada)
+  File "c:\Users\Lenovo\Downloads\TrucoCBR - pytest\Jogo\bot.py", line 346, in avaliarJogada
+    self.mao.remove(carta_selecionada)
+                    ^^^^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'carta_selecionada' where it is not associated with a value
+PS C:\Users\Lenovo\Downloads\TrucoCBR - pytest>
+```
